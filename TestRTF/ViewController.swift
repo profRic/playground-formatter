@@ -155,6 +155,4 @@ class ViewController: UIViewController, UITextViewDelegate {
         //print(outputString)
         fm.saveFile(text: outputString)
     }
- 
-    
 }
