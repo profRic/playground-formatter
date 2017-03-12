@@ -12,6 +12,12 @@
 		8780CD171E59EBA200625155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8780CD151E59EBA200625155 /* Main.storyboard */; };
 		8780CD191E59EBA200625155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8780CD181E59EBA200625155 /* Assets.xcassets */; };
 		8780CD1C1E59EBA200625155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8780CD1A1E59EBA200625155 /* LaunchScreen.storyboard */; };
+		8780CD241E59EC7500625155 /* testit.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8780CD231E59EC7500625155 /* testit.rtf */; };
+		8780CD261E5A0F8E00625155 /* test2.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8780CD251E5A0F8E00625155 /* test2.rtf */; };
+		8780CD701E68CFB400625155 /* exportAssessment.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8780CD6F1E68CFB400625155 /* exportAssessment.rtf */; };
+		879BF9FF1E72C561004DEA70 /* rtfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF9FE1E72C561004DEA70 /* rtfView.swift */; };
+		879BFA1F1E741C79004DEA70 /* CommonObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BFA1E1E741C79004DEA70 /* CommonObjects.swift */; };
+		879BFA211E7438A5004DEA70 /* FileMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BFA201E7438A5004DEA70 /* FileMgr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,13 @@
 		8780CD181E59EBA200625155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8780CD1B1E59EBA200625155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8780CD1D1E59EBA200625155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8780CD231E59EC7500625155 /* testit.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = testit.rtf; sourceTree = "<group>"; };
+		8780CD251E5A0F8E00625155 /* test2.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test2.rtf; sourceTree = "<group>"; };
+		8780CD6F1E68CFB400625155 /* exportAssessment.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = exportAssessment.rtf; sourceTree = "<group>"; };
+		879BF9FE1E72C561004DEA70 /* rtfView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rtfView.swift; sourceTree = "<group>"; };
+		879BFA1E1E741C79004DEA70 /* CommonObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonObjects.swift; sourceTree = "<group>"; };
+		879BFA201E7438A5004DEA70 /* FileMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMgr.swift; sourceTree = "<group>"; };
+		879BFA221E743C3F004DEA70 /* TestRTF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestRTF.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +67,16 @@
 		8780CD101E59EBA200625155 /* TestRTF */ = {
 			isa = PBXGroup;
 			children = (
+				879BFA221E743C3F004DEA70 /* TestRTF.entitlements */,
 				8780CD111E59EBA200625155 /* AppDelegate.swift */,
 				8780CD131E59EBA200625155 /* ViewController.swift */,
+				879BFA1E1E741C79004DEA70 /* CommonObjects.swift */,
+				8780CD251E5A0F8E00625155 /* test2.rtf */,
+				8780CD6F1E68CFB400625155 /* exportAssessment.rtf */,
 				8780CD151E59EBA200625155 /* Main.storyboard */,
+				879BF9FE1E72C561004DEA70 /* rtfView.swift */,
+				879BFA201E7438A5004DEA70 /* FileMgr.swift */,
+				8780CD231E59EC7500625155 /* testit.rtf */,
 				8780CD181E59EBA200625155 /* Assets.xcassets */,
 				8780CD1A1E59EBA200625155 /* LaunchScreen.storyboard */,
 				8780CD1D1E59EBA200625155 /* Info.plist */,
@@ -96,8 +116,13 @@
 				TargetAttributes = {
 					8780CD0D1E59EBA200625155 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = U6J58C8CJT;
+						DevelopmentTeam = 43ZU6ZW5A6;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -124,8 +149,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8780CD701E68CFB400625155 /* exportAssessment.rtf in Resources */,
 				8780CD1C1E59EBA200625155 /* LaunchScreen.storyboard in Resources */,
+				8780CD241E59EC7500625155 /* testit.rtf in Resources */,
 				8780CD191E59EBA200625155 /* Assets.xcassets in Resources */,
+				8780CD261E5A0F8E00625155 /* test2.rtf in Resources */,
 				8780CD171E59EBA200625155 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8780CD141E59EBA200625155 /* ViewController.swift in Sources */,
+				879BFA1F1E741C79004DEA70 /* CommonObjects.swift in Sources */,
+				879BFA211E7438A5004DEA70 /* FileMgr.swift in Sources */,
+				879BF9FF1E72C561004DEA70 /* rtfView.swift in Sources */,
 				8780CD121E59EBA200625155 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +292,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U6J58C8CJT;
+				CODE_SIGN_ENTITLEMENTS = TestRTF/TestRTF.entitlements;
+				DEVELOPMENT_TEAM = 43ZU6ZW5A6;
 				INFOPLIST_FILE = TestRTF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TestRTF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.telfordventures.TestRTF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -274,10 +306,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U6J58C8CJT;
+				CODE_SIGN_ENTITLEMENTS = TestRTF/TestRTF.entitlements;
+				DEVELOPMENT_TEAM = 43ZU6ZW5A6;
 				INFOPLIST_FILE = TestRTF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TestRTF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.telfordventures.TestRTF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,6 +335,7 @@
 				8780CD221E59EBA200625155 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

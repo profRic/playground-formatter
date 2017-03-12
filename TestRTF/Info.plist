@@ -41,5 +41,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>NSUbiquitousContainerName</key>
+		<string>iCloud.MYAPPS</string>
+		<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+		<true/>
+		<key>NSUbiquitousContainerSupportedFolderLevels</key>
+		<string>None</string>
+	</dict>
 </dict>
 </plist>

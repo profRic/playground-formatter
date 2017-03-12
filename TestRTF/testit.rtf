@@ -1,0 +1,365 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Light;\f2\fnil\fcharset0 NewsGothicMT;
+\f3\fmodern\fcharset0 Courier;\f4\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red89\green89\blue89;}
+{\*\expandedcolortbl;;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c34902\c34902\c34902;}
+\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs56 \cf2 ECE 590.05 \'96 Mobile App Programming \uc0\u8232 Week Five:  Storing Data\u8232 February 9\super th\nosupersub , 2017\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs40 \cf2 Ric Telford\
+Adjunct Associate Professor\
+\
+Founder, Telford Ventures\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b\fs56 \cf2 Week 5 Overview\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 Recap / Announcements\
+Team Status\
+HW4\
+Persistent Storage Overview\
+App Sandbox / Simple File Saving\
+UIDocument\
+iCloud\
+Using NSKeyed Archiver / Unarchiver\
+About Week 6\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Recap\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 View Controller is where the action is \'96 follows MVC model, made to be subclassed\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 2 types \'96 Parentage and Presentation\
+View not initially loaded, use viewDidLoad to know when it is\
+Views can be loaded from .storyboard, .xib, or from code\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Some of the key View Controllers to know (in addition to Table View):\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Tab Bar Controller\
+Page View Controller\
+Split View Controller (Master / Detail)\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 There are various types of pre-built Views as well, including Collection Views and Web Views\
+There are 3 levels of objects that can help when presenting text:\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Text Objects - NSString / NSAttributedString\
+Interface Objects - UILabel, UITextField, UITextView\
+Framework - TextKit\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Custom views are created by using Images (UIImage) and graphics (UIGraphics, Core Graphics)\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 A graphic context allows for drawing to take place that is then going to be displayed.\
+Most common to subclass draw and issue \'93Drawing Orders\'94 in the graphic context\
+Alternatively you begin and end the Image context for drawing in.\
+A \'93Layer\'94 is created from the context and is a bitmapped version of what you drew.\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Announcements\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 Next week is your Team Project Design Presentation\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Create an 8 minute presentation on your project for the class to hear and give you feedback.\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\b \cf3 Upload to Sakai by NOON on Thursday the 16th.\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\b0 \cf3 Just 3 slides (Powerpoint, Keynote or .pdf only):\
+\pard\pardeftab720\li1800\fi-360\partightenfactor0
+
+\fs36 \cf3 Concept / Function Overview (
+\b text, pictures
+\b0 )\
+System Design / Architecture (components, network protocols, database, server OS, etc) (
+\b text or diagram
+\b0 )\
+User Interface screen flow / storyboard (
+\b diagram
+\b0  \'96 using a tool, or Powerpoint, or even a 
+\b picture
+\b0  of a 
+\b clearly drawn 
+\b0 diagram on whiteboard)\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Not everyone needs to talk\
+Short Q&A after each presentation\
+Everyone will provide feedback for your consideration\
+Grading based on completeness and clarity of presentation, content of the slides, and the overall concept\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Homework\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 Homework 3 \
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Due tomorrow at noon\
+I will show you a few examples\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Homework 4\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Due February 16\super th\nosupersub  at noon\
+Will not be moved back as we need to get back on schedule\
+I will show A few examples	\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Watch out for simple things that cost points:\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Not giving Reporter status\
+Not responding in Sakai\
+Misnaming your project (I use a Bash script to clone)\
+Warnings and even some Errors\
+Crashes on main paths\
+Late submissions\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Point penalties for these things increase as we move through the semester and can be very costly on the final project.\
+Try to take the time to do a clean download and test from Git after upload to make sure it all works.  \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Persistent Storage Overview\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 There are multiple ways to store data from an app\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 The Sandbox is the most common \'96 a defined and protected storage area on the device.\
+Documents directory in the sandbox allows for File Sharing via iTunes \
+iCloud provides storage outside of the device\
+Box is an external storage option (among others)\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Generally speaking, if data is not required to be shared, then can stay in sandbox.\
+For sharing, iCloud or Box is a better option today than the iTunes approach\
+For user defaults, you can use the 
+\f3 UserDefaults
+\f2  object to save all user info between sessions\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 The Sandbox\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 Standard Directories\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Documents \'96 set up primarily for doc sharing and backup, so good location for files\
+Application Support \'96 can be used for anything\
+Caches \'96 primarily for transient data\
+Temporary \'96 primarily for temp files, staging, etc\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Folders and Files can be created in any of these directories\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 FileManager and URL objects are used to point to folders\
+NSString, NSData, NSArray and NSDictionary provide their own methods for writing/reading\
+Other objects can create own writes by using NSCoder\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Documents Interactions\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0 \cf3 Document Types and Receiving a Document\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs48 \cf3 Apps can be registered to opening defined \'93types\'94 of documents (.pdf, .jpg, etc)\
+This information is stored in the Info.plist (Info tab when editing a target in Xcode)\
+App will appear in the options for viewing\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\f3\fs56 \cf3 UIDocumentInteractionController
+\f2  can be used to provide the reverse capability\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs48 \cf3 Handing a document off to another app\
+Also can be used to preview a document\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs56 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\b \cf1 Document Architecture\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0 \cf3 The 
+\f3 UIDocument
+\f2  class provides a standardized object for common document functions\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs48 \cf3 Background reading and writing\
+Autosave\
+Interfacing with iCloud\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs56 \cf3 Two key methods to override in order to use\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\f3\fs48 \cf3 loadFromContents:ofType:error
+\f2 : is used to load the document from disk\
+
+\f3 contentsForType:Error: 
+\f2 is called when it is time to save a document to disk.\
+Need to convert into/out of 
+\f3 NSData
+\f2  instance\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Homework 3 Review\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 Some of you still forgetting to give Reporter access to ANY of us, some forgot to give it to ALL of us 
+\f4 \'96
+\f2  Jonathan, Colby, me.\
+Others had code that would not build.  \
+Two are still in \'93No Submission\'94 status in Sakai\
+Of those that we could grade, the code is looking pretty good!\
+Let\'92s look at a few\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Storing in iCloud\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0 \cf3 Once an app uses UIDocument, iCloud integration is fairly simple, but error prone if you forget a step:\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs48 \cf3 Need to turn iCloud \'93on\'94 in Target/Capabilities\
+Make sure all the \'93Steps\'94 are resolved (this may require update to Provisioning Profile)\
+Select what container you want to use\
+.entitlements file should appear\
+Ensure you are logged into iCloud on the device you are using\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs56 \cf3 iCloud is known as \'93Ubiquity\'94 in code so that is the set of APIs you use.\
+Search for files using 
+\f3 NSMetadataQuery()\
+
+\f2 \
+\pard\pardeftab720\partightenfactor0
+
+\b \cf1 Storing custom classes \'96 NSCoding and NSKeyedArchiver\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 The NSCoding protocol provides the basis for how to 
+\i serialize/deserialize 
+\i0 data for storing or sending\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 encodeWithCoder is a required method for serializing objects\
+init(coder) allows for deserializing objects and creating an instance.\
+each property of the class needs to have a unique key associated with it for locating in the serial stream\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 NSKeyedArchiver/Unarchiver provide an API to read / write objects to/from disk.\
+Note:  Apple provides \'93Core Data Framework\'94 as well, which we will not use\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 Chapter 23 topics not covered today\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0 \cf3 NSFileCoordinator \'96 expose a file owned by one app to read/write by other apps (not going to cover)\
+File Sharing through iTunes (not going to cover)\
+XML (Week 9)\
+SQLite (Week 9)\
+Core Data (not going to cover)\
+Image File Formats (not going to cover)\
+\pard\pardeftab720\partightenfactor0
+
+\b \cf1 \uc0\u8232 About Week 6\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs48 \cf3 Team Assignment\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Prepare your Team Project Design Presentation\
+\pard\pardeftab720\li1800\fi-360\partightenfactor0
+
+\fs36 \cf3 3 slide, 7 minutes\
+Cover concept, system design / architecture, UI Flow\
+Not everyone needs to talk\
+Short Q&A after each presentation\
+\pard\pardeftab720\li1800\fi-360\partightenfactor0
+
+\b \cf3 Upload to Sakai by NOON Thursday\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\b0\fs40 \cf3 Everyone will provide feedback for your consideration\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Individual Assignment\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Finish up Homework 4 
+\f4 \'96
+\f2  Graphics.  Due NOON Friday.\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\fs48 \cf3 Coding Assignment 
+\f4 \'96
+\f2  see next slide\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs56 \cf1 \uc0\u8232 About Week 6, continued\
+\pard\pardeftab720\li540\fi-540\partightenfactor0
+
+\b0\fs58 \cf3 Coding Assignment\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Persist your student information to file so student list goes from session to session\
+Use NSKeyArchiver to persist all fields to disk, including picture.\
+You may choose to compress / convert pictures \'96 up to you.\
+Minimum data model you must persist (with preferred -not yet required - type):\
+\pard\pardeftab720\li1800\fi-360\partightenfactor0
+
+\fs36 \cf3 Name: String\
+Team: String\
+Gender: Bool (false = Female)\
+Location: String (City, State, Country) \
+Degree: String\'a0 \
+Programming Languages: Array of Strings\
+Hobbies: Array of Strings\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 If you have not already, make sure you can do all of the following from the Table View screen:\
+\pard\pardeftab720\li1800\fi-360\partightenfactor0
+
+\fs36 \cf3 Add a new student\
+Delete a student record \
+Edit a student record\
+\pard\pardeftab720\li1170\fi-450\partightenfactor0
+
+\fs40 \cf3 Ways to earn points towards full credit: \
+\pard\pardeftab720\li1800\fi-360\partightenfactor0
+
+\fs36 \cf3 Name Search of the table\
+Store additional field types (Job experience, etc.)\
+More complex search\
+More complex graphics on your personal page\
+}
