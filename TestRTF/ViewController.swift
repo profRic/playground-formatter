@@ -86,7 +86,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func pressed(_ sender: Any) {
-        print("VC from VC: \(self)")
+        //print("VC from VC: \(self)")
         self.textView.selectedRange = NSMakeRange(rangeStart, rangeLength)
         self.textView.becomeFirstResponder()
     }
@@ -152,7 +152,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func saveFile(_ sender: Any) {
-        print(outputString)
+        //print(outputString)
         fm.saveFile(text: outputString)
     }
  
