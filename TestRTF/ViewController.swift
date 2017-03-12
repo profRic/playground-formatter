@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         fm.setup()
         var content : String!
-        let fileURL = Bundle.main.url(forResource: "testit", withExtension: "rtf")
+        let fileURL = Bundle.main.url(forResource: "TestWord", withExtension: "rtf")
 
         do {
             content = try String(contentsOf: fileURL!, encoding: String.Encoding.utf8)
