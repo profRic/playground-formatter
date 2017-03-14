@@ -288,7 +288,7 @@
 				DEVELOPMENT_TEAM = 43ZU6ZW5A6;
 				INFOPLIST_FILE = TestRTF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.telfordventures.TestRTF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ric.telford.TestRTF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,7 +302,7 @@
 				DEVELOPMENT_TEAM = 43ZU6ZW5A6;
 				INFOPLIST_FILE = TestRTF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.telfordventures.TestRTF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ric.telford.TestRTF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
