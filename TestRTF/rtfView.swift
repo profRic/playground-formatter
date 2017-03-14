@@ -23,6 +23,10 @@ extension UIView {
 
 class rtfView: UITextView {
     
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
     override func canPerformAction(_ action: Selector, withSender sender: Any!) -> Bool {
        
         if (action == #selector(textItem(_:))) || (action == #selector(h1Item(_:))) || (action == #selector(h2Item(_:))) || (action == #selector(h3Item(_:))) || (action == #selector(boldItem(_:))) || (action == #selector(italicItem(_:))) || (action == #selector(bulletItem(_:))) || (action == #selector(numListItem(_:))) {

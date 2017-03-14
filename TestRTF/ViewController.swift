@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     var rangeLength : Int!
     var outputString = ""
     var ptr = 0
+    var menuCont : UIMenuController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +64,10 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         self.textView.attributedText = attrString
         
-        let menuCont: UIMenuController = UIMenuController.shared
-        menuCont.isMenuVisible = true
-        menuCont.arrowDirection = UIMenuControllerArrowDirection.down
-        menuCont.setTargetRect(CGRect.zero, in: self.view)
+        menuCont = UIMenuController.shared
+   //     menuCont.isMenuVisible = true
+   //     menuCont.arrowDirection = UIMenuControllerArrowDirection.up
+   //     menuCont.setTargetRect(CGRect.zero, in: self.view)
         
         let menuItem1: UIMenuItem = UIMenuItem(title: "Text", action: #selector(rtfView.textItem(_:)))
         let menuItem2: UIMenuItem = UIMenuItem(title: "H1", action: #selector(rtfView.h1Item(_:)))
@@ -88,9 +89,10 @@ class ViewController: UIViewController, UITextViewDelegate {
     @IBAction func pressed(_ sender: Any) {
         //print("VC from VC: \(self)")
         self.textView.selectedRange = NSMakeRange(rangeStart, rangeLength)
-        self.textView.becomeFirstResponder()
+        let _ = self.textView.becomeFirstResponder()
+        menuCont.setTargetRect(CGRect.zero, in: self.textView)
+        menuCont.setMenuVisible(true, animated: true)
     }
-
     
     func saveItem(value: markupType){
         let substr = attrString.attributedSubstring(from: NSMakeRange(rangeStart, rangeLength))
@@ -130,6 +132,9 @@ class ViewController: UIViewController, UITextViewDelegate {
         rangeStart = ptr
         rangeLength = rng.length
         self.textView.selectedRange = NSMakeRange(0, rangeLength)
+   //     let _ = self.textView.becomeFirstResponder()
+  //      menuCont.setTargetRect(CGRect.zero, in: self.textView)
+        menuCont.setMenuVisible(true, animated: true)
     }
     
     func formatString(wrapped: Bool, start: String, string: String, end: String) -> String {
